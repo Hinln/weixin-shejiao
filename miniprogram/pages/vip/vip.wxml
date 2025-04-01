@@ -1,0 +1,6 @@
+<view class="container">
+  <view class="vip-card">
+    <text class="title">VIP会员</text>
+    <text class="desc">享受专属特权</text>
+  </view>
+</view>

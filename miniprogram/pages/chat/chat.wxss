@@ -1,0 +1,127 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background: #f8f8f8;
+}
+
+.chat-header {
+  background: #fff;
+  padding: 20rpx;
+  border-bottom: 2rpx solid #f0f0f0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.friend-info {
+  text-align: center;
+}
+
+.nickname {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #333;
+}
+
+.status {
+  font-size: 24rpx;
+  color: #999;
+  margin-left: 10rpx;
+}
+
+.message-list {
+  flex: 1;
+  padding: 20rpx;
+  overflow-y: auto;
+}
+
+.message-item {
+  display: flex;
+  margin-bottom: 30rpx;
+}
+
+.message-item.self {
+  flex-direction: row-reverse;
+}
+
+.avatar {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+  margin: 0 20rpx;
+}
+
+.message-content {
+  max-width: 60%;
+}
+
+.message-bubble {
+  padding: 20rpx;
+  border-radius: 20rpx;
+  background: #fff;
+  word-break: break-all;
+  line-height: 1.4;
+}
+
+.self .message-bubble {
+  background: #1296db;
+  color: #fff;
+}
+
+.message-bubble image {
+  max-width: 100%;
+  border-radius: 10rpx;
+}
+
+.message-time {
+  font-size: 24rpx;
+  color: #999;
+  margin-top: 8rpx;
+  text-align: center;
+}
+
+.input-area {
+  background: #fff;
+  padding: 20rpx;
+  border-top: 2rpx solid #f0f0f0;
+}
+
+.toolbar {
+  margin-bottom: 20rpx;
+}
+
+.toolbar .iconfont {
+  font-size: 40rpx;
+  color: #666;
+}
+
+.input-box {
+  display: flex;
+  align-items: center;
+}
+
+.input-box input {
+  flex: 1;
+  height: 80rpx;
+  background: #f8f8f8;
+  border-radius: 40rpx;
+  padding: 0 30rpx;
+  font-size: 28rpx;
+  margin-right: 20rpx;
+}
+
+.send-btn {
+  width: 120rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  background: #1296db;
+  color: #fff;
+  border-radius: 40rpx;
+  font-size: 28rpx;
+}
+
+.send-btn[disabled] {
+  background: #ccc;
+}

@@ -1,0 +1,42 @@
+<view class="container">
+  <view class="post-list">
+    <block wx:for="{{posts}}" wx:key="_id">
+      <view class="post-item" bindtap="viewPost" data-id="{{item._id}}">
+        <view class="post-header">
+          <image class="avatar" src="{{item.userInfo.avatarUrl}}" mode="aspectFill"></image>
+          <view class="user-info">
+            <text class="nickname">{{item.userInfo.nickName}}</text>
+            <text class="time">{{item.createTime}}</text>
+          </view>
+          <view class="post-status {{item.burnAfterRead ? 'burn' : ''}}">
+            <text>{{item.burnAfterRead ? '阅后即焚' : '普通动态'}}</text>
+          </view>
+        </view>
+        <view class="post-content">
+          <text class="text-content">{{item.content}}</text>
+          <view class="image-list" wx:if="{{item.images.length > 0}}">
+            <block wx:for="{{item.images}}" wx:for-item="image" wx:key="*this">
+              <image class="post-image" src="{{image}}" mode="aspectFill" catchtap="previewImage" data-urls="{{item.images}}" data-current="{{image}}"></image>
+            </block>
+          </view>
+        </view>
+        <view class="post-footer">
+          <view class="action-item">
+            <text class="iconfont icon-like"></text>
+            <text class="count">{{item.likeCount || 0}}</text>
+          </view>
+          <view class="action-item">
+            <text class="iconfont icon-comment"></text>
+            <text class="count">{{item.commentCount || 0}}</text>
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+  <view class="empty-tip" wx:if="{{posts.length === 0}}">
+    <text>暂无动态</text>
+  </view>
+  <view class="post-btn" bindtap="navigateToPost">
+    <text class="iconfont icon-add"></text>
+  </view>
+</view>

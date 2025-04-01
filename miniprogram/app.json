@@ -1,0 +1,57 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/profile/profile",
+    "pages/posts/posts",
+    "pages/post-create/post-create",
+    "pages/post-detail/post-detail",
+    "pages/friends/friends",
+    "pages/vip/vip",
+    "pages/chat/chat",
+    "pages/admin/dashboard/dashboard",
+    "pages/admin/users/users",
+    "pages/admin/reports/reports",
+    "pages/admin/vip-settings/vip-settings"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "交友小程序",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#999999",
+    "selectedColor": "#1296db",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "images/tabbar/home.png",
+        "selectedIconPath": "images/tabbar/home-active.png"
+      },
+      {
+        "pagePath": "pages/friends/friends",
+        "text": "好友",
+        "iconPath": "images/tabbar/friends.png",
+        "selectedIconPath": "images/tabbar/friends-active.png"
+      },
+      {
+        "pagePath": "pages/posts/posts",
+        "text": "发布",
+        "iconPath": "images/tabbar/post.png",
+        "selectedIconPath": "images/tabbar/post-active.png"
+      },
+      {
+        "pagePath": "pages/profile/profile",
+        "text": "我的",
+        "iconPath": "images/tabbar/profile.png",
+        "selectedIconPath": "images/tabbar/profile-active.png"
+      }
+    ]
+  },
+  "usingComponents": {},
+  "sitemapLocation": "sitemap.json",
+  "cloud": true
+}

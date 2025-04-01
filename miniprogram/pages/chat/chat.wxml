@@ -1,0 +1,31 @@
+<view class="container">
+  <view class="chat-header">
+    <view class="friend-info">
+      <text class="nickname">{{friendName}}</text>
+      <text class="status">{{onlineStatus}}</text>
+    </view>
+  </view>
+
+  <scroll-view class="message-list" scroll-y="true" scroll-into-view="{{scrollToMessage}}" bindscrolltoupper="loadMoreMessages">
+    <view class="message-item {{item.from === 'self' ? 'self' : ''}}" wx:for="{{messages}}" wx:key="_id" id="msg-{{item._id}}">
+      <image class="avatar" src="{{item.from === 'self' ? userInfo.avatarUrl : friendInfo.avatarUrl}}" mode="aspectFill"></image>
+      <view class="message-content">
+        <view class="message-bubble">
+          <text wx:if="{{item.type === 'text'}}">{{item.content}}</text>
+          <image wx:if="{{item.type === 'image'}}" src="{{item.content}}" mode="widthFix" bindtap="previewImage" data-url="{{item.content}}"></image>
+        </view>
+        <text class="message-time">{{item.createTime}}</text>
+      </view>
+    </view>
+  </scroll-view>
+
+  <view class="input-area">
+    <view class="toolbar">
+      <text class="iconfont icon-image" bindtap="chooseImage"></text>
+    </view>
+    <view class="input-box">
+      <input type="text" value="{{inputMessage}}" bindinput="onInputChange" bindconfirm="sendMessage" confirm-type="send" placeholder="发送消息" />
+      <button class="send-btn" bindtap="sendMessage" disabled="{{!inputMessage}}">发送</button>
+    </view>
+  </view>
+</view>

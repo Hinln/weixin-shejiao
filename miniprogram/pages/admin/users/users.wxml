@@ -1,0 +1,8 @@
+<view class="container">
+  <view class="header">
+    <text class="title">用户管理</text>
+  </view>
+  <view class="content">
+    <!-- 用户管理内容 -->
+  </view>
+</view>

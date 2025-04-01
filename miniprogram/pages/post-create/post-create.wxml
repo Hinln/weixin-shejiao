@@ -1,0 +1,36 @@
+<view class="container">
+  <view class="post-form">
+    <textarea class="content-input" placeholder="分享你的想法..." value="{{content}}" bindinput="onContentInput"></textarea>
+    
+    <view class="image-uploader">
+      <view class="image-list">
+        <block wx:for="{{tempImages}}" wx:key="*this">
+          <view class="image-item">
+            <image src="{{item}}" mode="aspectFill" bindtap="previewImage" data-url="{{item}}"></image>
+            <view class="delete-btn" catchtap="deleteImage" data-index="{{index}}">
+              <text class="iconfont icon-close"></text>
+            </view>
+          </view>
+        </block>
+        <view class="upload-btn" bindtap="chooseImage" wx:if="{{tempImages.length < 9}}">
+          <text class="iconfont icon-add"></text>
+        </view>
+      </view>
+      <text class="tip">最多上传9张图片</text>
+    </view>
+
+    <view class="options">
+      <view class="option-item">
+        <text class="label">阅后即焚</text>
+        <switch checked="{{burnAfterRead}}" bindchange="onBurnChange"></switch>
+      </view>
+      <view class="option-item" wx:if="{{burnAfterRead}}">
+        <text class="tip burn-tip">该动态将在被查看5分钟后自动删除</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="bottom-bar">
+    <button class="submit-btn" type="primary" bindtap="submitPost" loading="{{isSubmitting}}">发布</button>
+  </view>
+</view>

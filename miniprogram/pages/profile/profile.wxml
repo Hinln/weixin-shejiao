@@ -1,0 +1,47 @@
+<view class="container">
+  <view class="user-card">
+    <image class="bg-image" src="{{userInfo.backgroundUrl || '/images/default-bg.png'}}" mode="aspectFill"></image>
+    <view class="user-info">
+      <image class="avatar" src="{{userInfo.avatarUrl}}" mode="aspectFill"></image>
+      <text class="nickname">{{userInfo.nickName}}</text>
+      <view class="vip-tag" wx:if="{{isVip}}">VIP会员</view>
+    </view>
+  </view>
+
+  <view class="stats-bar">
+    <view class="stat-item">
+      <text class="num">{{stats.posts || 0}}</text>
+      <text class="label">动态</text>
+    </view>
+    <view class="stat-item">
+      <text class="num">{{stats.friends || 0}}</text>
+      <text class="label">好友</text>
+    </view>
+    <view class="stat-item">
+      <text class="num">{{stats.likes || 0}}</text>
+      <text class="label">获赞</text>
+    </view>
+  </view>
+
+  <view class="menu-list">
+    <view class="menu-item" bindtap="navigateToMyPosts">
+      <text class="iconfont icon-post"></text>
+      <text class="title">我的动态</text>
+      <text class="iconfont icon-right"></text>
+    </view>
+    <view class="menu-item" bindtap="navigateToVip">
+      <text class="iconfont icon-vip"></text>
+      <text class="title">会员中心</text>
+      <text class="iconfont icon-right"></text>
+    </view>
+    <view class="menu-item" bindtap="navigateToSettings">
+      <text class="iconfont icon-settings"></text>
+      <text class="title">设置</text>
+      <text class="iconfont icon-right"></text>
+    </view>
+  </view>
+
+  <view class="admin-entry" wx:if="{{isAdmin}}" bindtap="navigateToAdmin">
+    <text class="entry-text">进入管理后台</text>
+  </view>
+</view>

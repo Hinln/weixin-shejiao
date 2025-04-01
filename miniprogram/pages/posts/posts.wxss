@@ -1,0 +1,131 @@
+.container {
+  padding: 20rpx;
+  background: #f8f8f8;
+}
+
+.post-list {
+  margin-bottom: 120rpx;
+}
+
+.post-item {
+  background: #fff;
+  border-radius: 20rpx;
+  padding: 30rpx;
+  margin-bottom: 20rpx;
+  box-shadow: 0 2rpx 10rpx rgba(0, 0, 0, 0.05);
+}
+
+.post-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20rpx;
+}
+
+.avatar {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+  margin-right: 20rpx;
+}
+
+.user-info {
+  flex: 1;
+}
+
+.nickname {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #333;
+}
+
+.time {
+  font-size: 24rpx;
+  color: #999;
+  display: block;
+  margin-top: 4rpx;
+}
+
+.post-status {
+  padding: 4rpx 12rpx;
+  border-radius: 10rpx;
+  background: #f0f0f0;
+}
+
+.post-status.burn {
+  background: #ff6b6b;
+  color: #fff;
+}
+
+.post-content {
+  margin-bottom: 20rpx;
+}
+
+.text-content {
+  font-size: 28rpx;
+  color: #333;
+  line-height: 1.6;
+}
+
+.image-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 20rpx;
+}
+
+.post-image {
+  width: 220rpx;
+  height: 220rpx;
+  margin-right: 10rpx;
+  margin-bottom: 10rpx;
+  border-radius: 10rpx;
+}
+
+.post-footer {
+  display: flex;
+  justify-content: flex-end;
+  border-top: 2rpx solid #f0f0f0;
+  padding-top: 20rpx;
+}
+
+.action-item {
+  display: flex;
+  align-items: center;
+  margin-left: 40rpx;
+}
+
+.iconfont {
+  font-size: 40rpx;
+  color: #999;
+  margin-right: 10rpx;
+}
+
+.count {
+  font-size: 24rpx;
+  color: #999;
+}
+
+.empty-tip {
+  text-align: center;
+  padding: 100rpx 0;
+  color: #999;
+  font-size: 28rpx;
+}
+
+.post-btn {
+  position: fixed;
+  right: 40rpx;
+  bottom: 40rpx;
+  width: 100rpx;
+  height: 100rpx;
+  background: #1296db;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4rpx 20rpx rgba(18, 150, 219, 0.3);
+}
+
+.post-btn .iconfont {
+  color: #fff;
+  font-size: 48rpx;
+}

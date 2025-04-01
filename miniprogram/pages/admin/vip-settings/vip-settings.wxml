@@ -1,0 +1,14 @@
+<view class="container">
+  <view class="title">VIP会员设置</view>
+  <view class="content">
+    <view class="form-item">
+      <text class="label">会员价格</text>
+      <input class="input" type="number" placeholder="请输入会员价格" bindinput="bindPriceInput"/>
+    </view>
+    <view class="form-item">
+      <text class="label">会员特权</text>
+      <textarea class="textarea" placeholder="请输入会员特权描述" bindinput="bindPrivilegeInput"/>
+    </view>
+    <button class="submit-btn" bindtap="handleSubmit">保存设置</button>
+  </view>
+</view>

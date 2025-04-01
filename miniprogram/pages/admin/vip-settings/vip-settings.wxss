@@ -1,0 +1,48 @@
+.container {
+  padding: 20rpx;
+}
+
+.title {
+  font-size: 36rpx;
+  font-weight: bold;
+  margin-bottom: 30rpx;
+}
+
+.content {
+  background: #fff;
+  border-radius: 20rpx;
+  padding: 30rpx;
+}
+
+.form-item {
+  margin-bottom: 40rpx;
+}
+
+.label {
+  font-size: 28rpx;
+  color: #333;
+  margin-bottom: 10rpx;
+  display: block;
+}
+
+.input {
+  border: 2rpx solid #f0f0f0;
+  border-radius: 10rpx;
+  padding: 20rpx;
+  font-size: 28rpx;
+}
+
+.textarea {
+  height: 200rpx;
+  border: 2rpx solid #f0f0f0;
+  border-radius: 10rpx;
+  padding: 20rpx;
+  font-size: 28rpx;
+}
+
+.submit-btn {
+  background: #1296db;
+  color: #fff;
+  border-radius: 10rpx;
+  margin-top: 40rpx;
+}

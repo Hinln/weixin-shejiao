@@ -1,0 +1,49 @@
+<view class="container">
+  <view class="tab-bar">
+    <view class="tab-item {{activeTab === 'friends' ? 'active' : ''}}" bindtap="switchTab" data-tab="friends">
+      <text>好友列表</text>
+    </view>
+    <view class="tab-item {{activeTab === 'requests' ? 'active' : ''}}" bindtap="switchTab" data-tab="requests">
+      <text>好友请求</text>
+      <view class="badge" wx:if="{{requestCount > 0}}">{{requestCount}}</view>
+    </view>
+  </view>
+
+  <view class="friends-list" wx:if="{{activeTab === 'friends'}}">
+    <view class="search-box">
+      <input type="text" placeholder="搜索好友" bindinput="onSearchInput" />
+      <text class="iconfont icon-search"></text>
+    </view>
+    
+    <view class="friend-item" wx:for="{{friendsList}}" wx:key="_id" bindtap="navigateToChat" data-friend="{{item}}">
+      <image class="avatar" src="{{item.avatarUrl}}" mode="aspectFill"></image>
+      <view class="info">
+        <text class="nickname">{{item.nickName}}</text>
+        <text class="status">{{item.status}}</text>
+      </view>
+      <text class="iconfont icon-right"></text>
+    </view>
+
+    <view class="empty-tip" wx:if="{{friendsList.length === 0}}">
+      <text>还没有好友哦，去发现页面找找吧</text>
+    </view>
+  </view>
+
+  <view class="requests-list" wx:if="{{activeTab === 'requests'}}">
+    <view class="request-item" wx:for="{{requestsList}}" wx:key="_id">
+      <image class="avatar" src="{{item.from.avatarUrl}}" mode="aspectFill"></image>
+      <view class="info">
+        <text class="nickname">{{item.from.nickName}}</text>
+        <text class="time">{{item.createTime}}</text>
+      </view>
+      <view class="actions">
+        <button class="btn accept" bindtap="handleRequest" data-id="{{item._id}}" data-action="accept">接受</button>
+        <button class="btn reject" bindtap="handleRequest" data-id="{{item._id}}" data-action="reject">拒绝</button>
+      </view>
+    </view>
+
+    <view class="empty-tip" wx:if="{{requestsList.length === 0}}">
+      <text>暂无好友请求</text>
+    </view>
+  </view>
+</view>

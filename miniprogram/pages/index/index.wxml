@@ -1,0 +1,31 @@
+<view class="container">
+  <view class="header">
+    <image class="logo" src="/images/logo.png" mode="aspectFit"></image>
+    <text class="title">交友小程序</text>
+  </view>
+
+  <view class="content" wx:if="{{!hasUserInfo}}">
+    <text class="welcome">欢迎来到交友小程序</text>
+    <text class="desc">这里有很多志同道合的朋友等着你</text>
+    <button class="login-btn" type="primary" bindtap="getUserProfile">微信登录</button>
+  </view>
+
+  <view class="user-info" wx:else>
+    <image class="avatar" src="{{userInfo.avatarUrl}}" mode="aspectFill"></image>
+    <text class="nickname">{{userInfo.nickName}}</text>
+    <view class="status-bar">
+      <view class="status-item">
+        <text class="num">{{postCount || 0}}</text>
+        <text class="label">动态</text>
+      </view>
+      <view class="status-item">
+        <text class="num">{{friendCount || 0}}</text>
+        <text class="label">好友</text>
+      </view>
+      <view class="status-item" bindtap="navigateToVip">
+        <text class="vip-tag {{isVip ? 'active' : ''}}">VIP</text>
+        <text class="label">{{isVip ? '会员' : '升级'}}</text>
+      </view>
+    </view>
+  </view>
+</view>

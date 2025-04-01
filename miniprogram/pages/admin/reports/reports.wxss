@@ -1,0 +1,70 @@
+.container {
+  padding: 20rpx;
+  background: #f8f8f8;
+  min-height: 100vh;
+}
+
+.header {
+  padding: 30rpx;
+  background: #fff;
+  margin-bottom: 20rpx;
+}
+
+.title {
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #333;
+}
+
+.content {
+  padding: 20rpx;
+}
+
+.report-list {
+  background: #fff;
+  border-radius: 10rpx;
+}
+
+.report-item {
+  padding: 30rpx;
+  border-bottom: 2rpx solid #f0f0f0;
+}
+
+.report-item:last-child {
+  border-bottom: none;
+}
+
+.info {
+  margin-bottom: 20rpx;
+}
+
+.type {
+  font-size: 28rpx;
+  color: #333;
+  display: block;
+}
+
+.time {
+  font-size: 24rpx;
+  color: #999;
+  display: block;
+  margin-top: 10rpx;
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.btn {
+  margin-left: 20rpx;
+  font-size: 28rpx;
+  color: #fff;
+  background: #1296db;
+  border-radius: 10rpx;
+  padding: 10rpx 30rpx;
+}
+
+.btn:active {
+  opacity: 0.8;
+}

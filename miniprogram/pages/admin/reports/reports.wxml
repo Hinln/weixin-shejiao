@@ -1,0 +1,21 @@
+<view class="container">
+  <view class="header">
+    <text class="title">举报审核</text>
+  </view>
+  <view class="content">
+    <view class="report-list">
+      <block wx:for="{{reportList}}" wx:key="id">
+        <view class="report-item">
+          <view class="info">
+            <text class="type">举报类型：{{item.type}}</text>
+            <text class="time">举报时间：{{item.time}}</text>
+          </view>
+          <view class="actions">
+            <button class="btn" bindtap="handleDetail" data-id="{{item.id}}">查看详情</button>
+            <button class="btn" bindtap="handleProcess" data-id="{{item.id}}">处理</button>
+          </view>
+        </view>
+      </block>
+    </view>
+  </view>
+</view>

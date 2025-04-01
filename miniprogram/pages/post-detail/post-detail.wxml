@@ -1,0 +1,62 @@
+<view class="container">
+  <view class="post-detail" wx:if="{{post}}">
+    <view class="post-header">
+      <image class="avatar" src="{{post.userInfo.avatarUrl}}" mode="aspectFill"></image>
+      <view class="user-info">
+        <text class="nickname">{{post.userInfo.nickName}}</text>
+        <text class="time">{{post.createTime}}</text>
+      </view>
+      <view class="post-status {{post.burnAfterRead ? 'burn' : ''}}">
+        <text>{{post.burnAfterRead ? '阅后即焚' : '普通动态'}}</text>
+      </view>
+    </view>
+    
+    <view class="post-content">
+      <text class="text-content">{{post.content}}</text>
+      <view class="image-list" wx:if="{{post.images.length > 0}}">
+        <block wx:for="{{post.images}}" wx:key="*this">
+          <image class="post-image" src="{{item}}" mode="widthFix" bindtap="previewImage" data-url="{{item}}" data-urls="{{post.images}}"></image>
+        </block>
+      </view>
+    </view>
+
+    <view class="post-stats">
+      <view class="stat-item" bindtap="handleLike">
+        <text class="iconfont {{isLiked ? 'icon-like-filled' : 'icon-like'}}"></text>
+        <text class="count">{{post.likeCount || 0}}</text>
+      </view>
+      <view class="stat-item">
+        <text class="iconfont icon-comment"></text>
+        <text class="count">{{post.commentCount || 0}}</text>
+      </view>
+    </view>
+
+    <view class="comment-section">
+      <view class="section-title">评论</view>
+      <view class="comment-list">
+        <block wx:for="{{comments}}" wx:key="_id">
+          <view class="comment-item">
+            <image class="comment-avatar" src="{{item.userInfo.avatarUrl}}" mode="aspectFill"></image>
+            <view class="comment-content">
+              <text class="comment-nickname">{{item.userInfo.nickName}}</text>
+              <text class="comment-text">{{item.content}}</text>
+              <text class="comment-time">{{item.createTime}}</text>
+            </view>
+          </view>
+        </block>
+      </view>
+      <view class="empty-comment" wx:if="{{comments.length === 0}}">
+        <text>暂无评论</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="comment-input-area">
+    <input class="comment-input" placeholder="说点什么..." value="{{commentContent}}" bindinput="onCommentInput"></input>
+    <button class="send-btn" bindtap="submitComment">发送</button>
+  </view>
+
+  <view class="loading" wx:if="{{isLoading}}">
+    <text>加载中...</text>
+  </view>
+</view>

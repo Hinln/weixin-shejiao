@@ -1,0 +1,23 @@
+.container {
+  padding: 20rpx;
+  background: #f8f8f8;
+}
+
+.vip-card {
+  background: #fff;
+  padding: 30rpx;
+  border-radius: 20rpx;
+  box-shadow: 0 2rpx 10rpx rgba(0, 0, 0, 0.05);
+}
+
+.title {
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #333;
+}
+
+.desc {
+  font-size: 28rpx;
+  color: #999;
+  margin-top: 10rpx;
+}
